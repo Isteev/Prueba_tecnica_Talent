@@ -57,7 +57,6 @@ export class UserComponent implements OnInit {
         this.users = data.items as User[];
         this.setDataBar();
       });
-
     }
   }
 
