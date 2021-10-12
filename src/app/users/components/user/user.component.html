@@ -1,0 +1,51 @@
+<div class="container mt-4">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="form-group">
+      <h2 class="mb-4 text-center">Prueba DVP Users GitHub</h2>
+
+      <div class="input-group">
+        <input class="form-control" maxlength="128" placeholder="Buscar" type="text" name="Filter" ngModel />
+        <button class="btn btn-primary"><i class="fa fa-search fa-lg"></i></button>
+      </div>
+
+      <div class="text-left px-3" style="color: rgb(240, 125, 125);">
+        <app-error [error]="error" *ngIf="error" ></app-error>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="mx-auto pt-5 d-grid gap-5 align-items-start" style="max-width: 80vw; grid-template-columns: repeat(2, 1fr);">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Usuario</th>
+        <th scope="col">id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users.slice(0, 10); index as i" (click)="goToUserDetail(user.login)">
+        <th scope="row">{{ i+1 }}</th>
+        <td><span style="color: royalblue; cursor: pointer;">{{user.login}} </span></td>
+        <td>{{ user.id }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="max-width: 30vw;">
+    <div>
+      <div style="display: block">
+        <canvas baseChart
+          [datasets]="Data"
+          [labels]="Labels"
+          [options]="Options"
+          [legend]="Legend"
+          [chartType]="Type">
+        </canvas>
+      </div>
+      <button mat-button mat-raised-button color="primary">Update</button>
+    </div>
+  </div>
+</div>
+

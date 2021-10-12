@@ -1,0 +1,68 @@
+<!-- <div class="d-flex justify-itmes-center">
+  <div class="card p-4 rounded-3" style="max-width: 250px;">
+      <img src="{{ user.avatar_url }}" class="img-fluid rounded-start" alt="...">
+  </div>
+
+  <div class="col-md-8">
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-title">{{ user.login }}</h5>
+    <p class="card-text"> little bit longer.</p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  </div>
+
+  <div>
+    <p>Followers: 1</p>
+    <p>Following: 1</p>
+  </div>
+
+  
+</div> -->
+
+<div class="d-flex align-items-center" style="height: 100vh; min-width: 100vh;">
+  <div class="m-auto p-5" style="min-width: 70vw; min-height: 80vh; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;" >
+    <div class="d-grid gap-4 mx-auto align-items-center" style="grid-template-columns: repeat(4, 1fr);">
+      <div class="p-4 rounded-3 col-sm" style="max-width: 200px; min-height: 200px; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+        <img src="{{ user?.avatar_url }}" class="img-fluid rounded-start" alt="...">
+      </div>
+
+      <div class="px-5 d-flex flex-column justify-content-end" style="height: 100%;">
+        <p style="font-weight: 600;">Login:</p>
+        <p>{{ user?.login }}</p>
+      </div>
+      <div class="px-5 d-flex flex-column justify-content-end" style="height: 100%;">
+        <p style="font-weight: 600;">id</p>
+        <p>{{ user?.id }}</p>
+      </div>
+      <div class="px-5 d-flex flex-column justify-content-end" style="height: 100%;">
+        <p style="font-weight: 600;">Name</p>
+        <p>{{ user?.name}}</p>
+      </div>
+      <div class="px-5">
+        <p style="font-weight: 600;">GitHub</p>
+        <a href="{{ user?.html_url }}">{{ user?.html_url }}</a>
+      </div>
+      <div class="px-5">
+        <p style="font-weight: 600;">Company</p>
+        <p >{{ user?.company }}</p>
+      </div>
+      <div class="px-5">
+        <p style="font-weight: 600;">location</p>
+        <p>{{ user?.location }}</p>
+      </div>
+      <div class="px-5">
+        <p style="font-weight: 600;">Created at</p>
+        <p>{{ user?.created_at?.slice(0, 10) }}</p>
+      </div>
+      <div class="px-5">
+        <p style="font-weight: 600;">Public repos</p>
+        <p>{{ user?.public_repos }}</p>
+      </div>
+      <div class="px-5">
+        <p style="font-weight: 600;">Followers</p>
+        <p>{{ user?.followers }}</p>
+      </div>
+    </div>
+  </div>
+</div>
